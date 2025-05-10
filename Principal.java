@@ -3,12 +3,21 @@
 
 public class Principal {
     public static void main(String[] args) {
-        Cliente clienteUm = new Cliente("Cliente Um", "Desenvolimento de App");
+        Cliente clienteUm = new Cliente("Cliente Um", "Desenvolvimento de App");
         Empresa empresa = new Empresa("Bels", "Avaré");
-        Programadores programadorUm = new Programadores("Vitor", "Back-End");
 
+        
+        ProgramadorBackEnd programadorUm = new ProgramadorBackEnd();
+        programadorUm.setNome("Vitor");
+        programadorUm.setTipo("Back-End");
+        programadorUm.setLinguagemBackEnd("Java");
+        programadorUm.setBancoDeDados("MySQL");
+
+       
         System.out.println("Cliente: " + clienteUm.getNome() + ", Projeto: " + clienteUm.getProjeto());
         System.out.println("Empresa: " + empresa.getNome() + ", Localização: " + empresa.getLocalizacao());
         System.out.println("Programador: " + programadorUm.getNome() + ", Tipo: " + programadorUm.getTipo());
+        System.out.println("Linguagem: " + programadorUm.getLinguagemBackEnd());
+        System.out.println("Banco de Dados: " + programadorUm.getBancoDeDados());
     }
 }
