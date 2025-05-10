@@ -6,6 +6,9 @@ class ProgramadorFrontEnd extends Programador {
     private String linguagemFrontEnd;
     private String framework;
 
+    public ProgramadorFrontEnd() {
+    }
+
     public void setLinguagemFrontEnd(String linguagemFrontEnd) {
         this.linguagemFrontEnd = linguagemFrontEnd;
     }

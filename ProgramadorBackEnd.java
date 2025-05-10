@@ -6,6 +6,9 @@ class ProgramadorBackEnd extends Programador {
     private String linguagemBackEnd;
     private String bancoDeDados;
 
+    public ProgramadorBackEnd() {
+    }
+
     public void setLinguagemBackEnd(String linguagemBackEnd) {
         this.linguagemBackEnd = linguagemBackEnd;
     }

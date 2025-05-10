@@ -5,9 +5,7 @@ public class Cliente {
     private String nome;
     private String projeto;
 
-    public Cliente(String nome, String projeto) {
-        this.nome = nome;
-        this.projeto = projeto;
+    public Cliente() {
     }
 
     public String getNome() {

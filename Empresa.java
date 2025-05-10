@@ -4,10 +4,10 @@
 public class Empresa {
     private String nome;
     private String localizacao;
+    private String dados;
 
-    public Empresa(String nome, String localizacao) {
-        this.nome = nome;
-        this.localizacao = localizacao;
+    public Empresa() {
+        this.dados = "A Bels é uma empresa de tecnologia especializada em soluções digitais para apps e sistemas personalizados.";
     }
 
     public String getNome() {
@@ -24,5 +24,9 @@ public class Empresa {
 
     public void setLocalizacao(String localizacao) {
         this.localizacao = localizacao;
+    }
+
+    public String getDados() {
+        return dados;
     }
 }

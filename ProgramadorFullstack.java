@@ -6,6 +6,9 @@ class ProgramadorFullstack extends Programador {
     private int anosExperiencia;
     private String projetosConcluidos;
 
+    public ProgramadorFullstack() {
+    }
+
     public void setAnosExperiencia(int anosExperiencia) {
         this.anosExperiencia = anosExperiencia;
     }
