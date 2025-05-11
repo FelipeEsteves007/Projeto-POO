@@ -11,34 +11,30 @@ public class Principal {
         int opcao = 0;
 
         Empresa empresa = new Empresa();
-        empresa.setNome("Bels");
         empresa.setLocalizacao("Avaré");
 
         // Programador Back-End
         ProgramadorBackEnd prog1 = new ProgramadorBackEnd();
         prog1.setNome("Zé");
-        prog1.setTipo("Back-End");
         prog1.setLinguagemBackEnd("Java");
         prog1.setBancoDeDados("MySQL");
 
         // Programador Front-End
         ProgramadorFrontEnd prog2 = new ProgramadorFrontEnd();
         prog2.setNome("Larissa");
-        prog2.setTipo("Front-End");
         prog2.setLinguagemFrontEnd("JavaScript");
         prog2.setFramework("React");
 
         // Programador Fullstack
         ProgramadorFullstack prog3 = new ProgramadorFullstack();
         prog3.setNome("Felipe");
-        prog3.setTipo("Fullstack");
         prog3.setAnosExperiencia(4);
         prog3.setProjetosConcluidos("App Mobile + API Web");
 
         try {
             do {
                 System.out.println("\n====== MENU ======");
-                System.out.println("1 - Cadastrar Cliente");
+                System.out.println("1 - Cadastrar Cliente/Projeto");
                 System.out.println("2 - Exibir Programadores Disponíveis");
                 System.out.println("3 - Exibir Dados da Empresa");
                 System.out.println("4 - Sair");
@@ -75,13 +71,9 @@ public class Principal {
 
                     case 2:
                         System.out.println("\n--- PROGRAMADORES DISPONÍVEIS ---");
-                        System.out.println(prog1.getNome() + " | " + prog1.getTipo() + " | " +
-                                prog1.getLinguagemBackEnd() + " | " + prog1.getBancoDeDados());
-                        System.out.println(prog2.getNome() + " | " + prog2.getTipo() + " | " +
-                                prog2.getLinguagemFrontEnd() + " | " + prog2.getFramework());
-                        System.out.println(prog3.getNome() + " | " + prog3.getTipo() + " | " +
-                                prog3.getAnosExperiencia() + " anos de experiência | " +
-                                prog3.getProjetosConcluidos());
+                        prog1.exibirDados();
+                        prog2.exibirDados();
+                        prog3.exibirDados();
                         break;
 
                     case 3:
@@ -89,7 +81,6 @@ public class Principal {
                         System.out.println("Nome: " + empresa.getNome());
                         System.out.println("Localização: " + empresa.getLocalizacao());
                         System.out.println("Sobre a empresa: " + empresa.getDados());
-
                         break;
 
                     case 4:
@@ -108,4 +99,3 @@ public class Principal {
         }
     }
 }
-

@@ -1,11 +1,6 @@
 // Felipe Esteves de Paula
 // RA: 2389576
 
-// Interface para exibição
-interface Exibivel {
-    void exibirDados();
-}
-
 // Classe mãe
 public class Programador implements Exibivel {
     private String nome;
@@ -13,10 +8,6 @@ public class Programador implements Exibivel {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     public String getNome() {

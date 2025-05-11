@@ -1,5 +1,5 @@
-//Felipe Esteves de Paula
-//RA: 2389576
+// Felipe Esteves de Paula
+// RA: 2389576
 
 // Classe filha: Front-End
 class ProgramadorFrontEnd extends Programador {

@@ -7,15 +7,12 @@ public class Empresa {
     private String dados;
 
     public Empresa() {
+        this.nome = "Bels";
         this.dados = "A Bels é uma empresa de tecnologia especializada em soluções digitais para apps e sistemas personalizados.";
     }
 
     public String getNome() {
         return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getLocalizacao() {
