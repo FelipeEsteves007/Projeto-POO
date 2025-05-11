@@ -1,8 +1,13 @@
 // Felipe Esteves de Paula
 // RA: 2389576
 
+// Interface para exibição
+interface Exibivel {
+    void exibirDados();
+}
+
 // Classe mãe
-public class Programador {
+public class Programador implements Exibivel {
     private String nome;
     private String tipo;
 
@@ -19,6 +24,26 @@ public class Programador {
     }
 
     public String getTipo() {
-        return tipo;
+        return "Programador genérico";
+    }
+
+    //Sobrecarga
+    public void mostrarDetalhes() {
+        System.out.println("Nome: " + getNome());
+    }
+
+    //Sobrecarga
+    public void mostrarDetalhes(String projeto) {
+        System.out.println("Nome: " + getNome() + " | Projeto: " + projeto);
+    }
+
+    //Sobrecarga
+    public void mostrarDetalhes(String projeto, int horas) {
+        System.out.println("Nome: " + getNome() + " | Projeto: " + projeto + " | Horas: " + horas);
+    }
+
+    //Interface
+    public void exibirDados() {
+        System.out.println("Programador: " + getNome() + " | Tipo: " + getTipo());
     }
 }

@@ -16,7 +16,7 @@ public class Principal {
 
         // Programador Back-End
         ProgramadorBackEnd prog1 = new ProgramadorBackEnd();
-        prog1.setNome("Carlos");
+        prog1.setNome("Zé");
         prog1.setTipo("Back-End");
         prog1.setLinguagemBackEnd("Java");
         prog1.setBancoDeDados("MySQL");

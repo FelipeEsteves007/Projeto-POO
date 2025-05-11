@@ -7,6 +7,7 @@ class ProgramadorBackEnd extends Programador {
     private String bancoDeDados;
 
     public ProgramadorBackEnd() {
+        super();
     }
 
     public void setLinguagemBackEnd(String linguagemBackEnd) {
@@ -23,5 +24,17 @@ class ProgramadorBackEnd extends Programador {
 
     public String getBancoDeDados() {
         return bancoDeDados;
+    }
+
+    //Sobrescrita
+    @Override
+    public String getTipo() {
+        return "Especialista em Back-End (" + linguagemBackEnd + ", " + bancoDeDados + ")";
+    }
+
+    @Override
+    public void exibirDados() {
+        super.exibirDados();
+        System.out.println("Banco de Dados: " + bancoDeDados);
     }
 }

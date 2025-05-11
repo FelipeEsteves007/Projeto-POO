@@ -1,5 +1,5 @@
-// Felipe Esteves de Paula
-// RA: 2389576
+//Felipe Esteves de Paula
+//RA: 2389576
 
 // Classe filha: Front-End
 class ProgramadorFrontEnd extends Programador {
@@ -7,6 +7,7 @@ class ProgramadorFrontEnd extends Programador {
     private String framework;
 
     public ProgramadorFrontEnd() {
+        super();
     }
 
     public void setLinguagemFrontEnd(String linguagemFrontEnd) {
@@ -23,5 +24,17 @@ class ProgramadorFrontEnd extends Programador {
 
     public String getFramework() {
         return framework;
+    }
+
+    //Sobrescrita
+    @Override
+    public String getTipo() {
+        return "Especialista em Front-End (" + linguagemFrontEnd + ", " + framework + ")";
+    }
+
+    @Override
+    public void exibirDados() {
+        super.exibirDados();
+        System.out.println("Framework: " + framework);
     }
 }

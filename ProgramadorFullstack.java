@@ -7,6 +7,7 @@ class ProgramadorFullstack extends Programador {
     private String projetosConcluidos;
 
     public ProgramadorFullstack() {
+        super();
     }
 
     public void setAnosExperiencia(int anosExperiencia) {
@@ -23,5 +24,17 @@ class ProgramadorFullstack extends Programador {
 
     public String getProjetosConcluidos() {
         return projetosConcluidos;
+    }
+
+    //Sobrescrita
+    @Override
+    public String getTipo() {
+        return "Fullstack com " + anosExperiencia + " anos de experiência";
+    }
+
+    @Override
+    public void exibirDados() {
+        super.exibirDados();
+        System.out.println("Projetos: " + projetosConcluidos);
     }
 }
