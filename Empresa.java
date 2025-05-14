@@ -8,7 +8,9 @@ public class Empresa {
 
     public Empresa() {
         this.nome = "Bels";
-        this.dados = "A Bels é uma empresa de tecnologia especializada em soluções digitais para apps e sistemas personalizados. Com nossa empresa vocẽ pode ter seu próprio app, site ou sistema, tudo feito sob medida para você!";
+        this.dados = """
+        A Bels é uma empresa de tecnologia especializada em soluções digitais para apps e sistemas personalizados. 
+        Com nossa empresa vocẽ pode ter seu próprio app, site ou sistema, tudo feito sob medida para você!""";
     }
 
     public String getNome() {
