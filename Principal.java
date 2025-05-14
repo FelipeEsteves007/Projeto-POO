@@ -4,6 +4,8 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Principal {
     public static void main(String[] args) {
@@ -12,6 +14,8 @@ public class Principal {
 
         Empresa empresa = new Empresa();
         empresa.setLocalizacao("Avaré");
+
+        List<Cliente> listaClientes = new ArrayList<>();
 
         // Programador Back-End
         ProgramadorBackEnd prog1 = new ProgramadorBackEnd();
@@ -37,7 +41,8 @@ public class Principal {
                 System.out.println("1 - Cadastrar Cliente/Projeto");
                 System.out.println("2 - Exibir Programadores Disponíveis");
                 System.out.println("3 - Exibir Dados da Empresa");
-                System.out.println("4 - Sair");
+                System.out.println("4 - Exibir Clientes/Projetos");
+                System.out.println("5 - Sair");
                 System.out.print("Escolha uma opção: ");
 
                 opcao = Integer.parseInt(reader.readLine());
@@ -58,22 +63,31 @@ public class Principal {
                         System.out.print("Digite o número: ");
                         int escolha = Integer.parseInt(reader.readLine());
 
-                        if (escolha == 1) {
+                        if (escolha == 1 && !prog1.isOcupado()) {
+                            prog1.setOcupado(true);
+                            cliente.setProgramador(prog1.getNome());
+                            listaClientes.add(cliente);
                             System.out.println("Projeto atribuído a " + prog1.getNome());
-                        } else if (escolha == 2) {
+                        } else if (escolha == 2 && !prog2.isOcupado()) {
+                            prog2.setOcupado(true);
+                            cliente.setProgramador(prog2.getNome());
+                            listaClientes.add(cliente);
                             System.out.println("Projeto atribuído a " + prog2.getNome());
-                        } else if (escolha == 3) {
+                        } else if (escolha == 3 && !prog3.isOcupado()) {
+                            prog3.setOcupado(true);
+                            cliente.setProgramador(prog3.getNome());
+                            listaClientes.add(cliente);
                             System.out.println("Projeto atribuído a " + prog3.getNome());
                         } else {
-                            System.out.println("Opção inválida. Programador não atribuído.");
+                            System.out.println("Programador escolhido já está ocupado ou inválido.");
                         }
                         break;
 
                     case 2:
                         System.out.println("\n--- PROGRAMADORES DISPONÍVEIS ---");
-                        prog1.exibirDados();
-                        prog2.exibirDados();
-                        prog3.exibirDados();
+                        if (!prog1.isOcupado()) prog1.exibirDados();
+                        if (!prog2.isOcupado()) prog2.exibirDados();
+                        if (!prog3.isOcupado()) prog3.exibirDados();
                         break;
 
                     case 3:
@@ -84,13 +98,26 @@ public class Principal {
                         break;
 
                     case 4:
+                        System.out.println("\n--- CLIENTES E PROJETOS CADASTRADOS ---");
+                        if (listaClientes.isEmpty()) {
+                            System.out.println("Nenhum cliente cadastrado.");
+                        } else {
+                            for (Cliente c : listaClientes) {
+                                System.out.println("Cliente: " + c.getNome() +
+                                        " | Projeto: " + c.getProjeto() +
+                                        " | Programador: " + c.getProgramador());
+                            }
+                        }
+                        break;
+
+                    case 5:
                         System.out.println("Encerrando o sistema...");
                         break;
 
                     default:
                         System.out.println("Opção inválida.");
                 }
-            } while (opcao != 4);
+            } while (opcao != 5);
 
         } catch (IOException e) {
             System.out.println("Erro de entrada: " + e.getMessage());

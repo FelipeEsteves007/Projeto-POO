@@ -2,13 +2,9 @@
 // RA: 2389576
 
 // Classe filha: Fullstack
-class ProgramadorFullstack extends Programador {
+public class ProgramadorFullstack extends Programador {
     private int anosExperiencia;
     private String projetosConcluidos;
-
-    public ProgramadorFullstack() {
-        super();
-    }
 
     public void setAnosExperiencia(int anosExperiencia) {
         this.anosExperiencia = anosExperiencia;

@@ -2,13 +2,9 @@
 // RA: 2389576
 
 // Classe filha: Back-End
-class ProgramadorBackEnd extends Programador {
+public class ProgramadorBackEnd extends Programador {
     private String linguagemBackEnd;
     private String bancoDeDados;
-
-    public ProgramadorBackEnd() {
-        super();
-    }
 
     public void setLinguagemBackEnd(String linguagemBackEnd) {
         this.linguagemBackEnd = linguagemBackEnd;

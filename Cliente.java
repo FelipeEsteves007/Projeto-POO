@@ -4,6 +4,7 @@
 public class Cliente {
     private String nome;
     private String projeto;
+    private String programador;
 
     public Cliente() {
     }
@@ -24,4 +25,11 @@ public class Cliente {
         this.projeto = projeto;
     }
 
+    public String getProgramador() {
+        return programador;
+    }
+
+    public void setProgramador(String programador) {
+        this.programador = programador;
+    }
 }

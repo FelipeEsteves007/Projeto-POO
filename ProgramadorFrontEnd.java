@@ -2,13 +2,9 @@
 // RA: 2389576
 
 // Classe filha: Front-End
-class ProgramadorFrontEnd extends Programador {
+public class ProgramadorFrontEnd extends Programador {
     private String linguagemFrontEnd;
     private String framework;
-
-    public ProgramadorFrontEnd() {
-        super();
-    }
 
     public void setLinguagemFrontEnd(String linguagemFrontEnd) {
         this.linguagemFrontEnd = linguagemFrontEnd;

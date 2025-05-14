@@ -4,7 +4,7 @@
 // Classe mãe
 public class Programador implements Exibivel {
     private String nome;
-    private String tipo;
+    private boolean ocupado = false;
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -12,6 +12,14 @@ public class Programador implements Exibivel {
 
     public String getNome() {
         return nome;
+    }
+
+    public boolean isOcupado() {
+        return ocupado;
+    }
+
+    public void setOcupado(boolean ocupado) {
+        this.ocupado = ocupado;
     }
 
     public String getTipo() {
@@ -35,6 +43,6 @@ public class Programador implements Exibivel {
 
     //Interface
     public void exibirDados() {
-        System.out.println("Programador: " + getNome() + " | Tipo: " + getTipo());
+        System.out.println("Programador: " + getNome() + " | Tipo: " + getTipo() + " | Ocupado: " + (ocupado ? "Sim" : "Não"));
     }
 }
