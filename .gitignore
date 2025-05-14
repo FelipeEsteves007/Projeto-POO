@@ -1,0 +1,10 @@
+# Arquivos compilados Java
+*.class
+
+# Arquivos temporários de editores
+*.save
+*.log
+*.tmp
+
+# Arquivos do macOS
+.DS_Store
