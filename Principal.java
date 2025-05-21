@@ -50,36 +50,60 @@ public class Principal {
                 switch (opcao) {
                     case 1:
                         Cliente cliente = new Cliente();
-                        System.out.print("Nome do Cliente: ");
-                        cliente.setNome(reader.readLine());
+                        try {
+                            System.out.print("Nome do Cliente: ");
+                            String nomeCliente = reader.readLine();
+                            validarProjeto(nomeCliente);
+                            cliente.setNome(nomeCliente);
 
-                        System.out.print("Nome do Projeto: ");
-                        cliente.setProjeto(reader.readLine());
+                            System.out.print("Nome do Projeto: ");
+                            String nomeProjeto = reader.readLine();
+                            validarProjeto(nomeProjeto);
+                            cliente.setProjeto(nomeProjeto);
 
-                        System.out.println("\nEscolha um programador:");
-                        System.out.println("1 - " + prog1.getNome() + " (" + prog1.getTipo() + ")");
-                        System.out.println("2 - " + prog2.getNome() + " (" + prog2.getTipo() + ")");
-                        System.out.println("3 - " + prog3.getNome() + " (" + prog3.getTipo() + ")");
-                        System.out.print("Digite o número: ");
-                        int escolha = Integer.parseInt(reader.readLine());
+                            System.out.println("\nEscolha um programador:");
+                            System.out.print("1 - " + prog1.getNome() + " (" + prog1.getTipo() + ")");
+                            System.out.println(prog1.isOcupado() ? " [OCUPADO]" : "");
 
-                        if (escolha == 1 && !prog1.isOcupado()) {
-                            prog1.setOcupado(true);
-                            cliente.setProgramador(prog1.getNome());
-                            listaClientes.add(cliente);
-                            System.out.println("Projeto atribuído a " + prog1.getNome());
-                        } else if (escolha == 2 && !prog2.isOcupado()) {
-                            prog2.setOcupado(true);
-                            cliente.setProgramador(prog2.getNome());
-                            listaClientes.add(cliente);
-                            System.out.println("Projeto atribuído a " + prog2.getNome());
-                        } else if (escolha == 3 && !prog3.isOcupado()) {
-                            prog3.setOcupado(true);
-                            cliente.setProgramador(prog3.getNome());
-                            listaClientes.add(cliente);
-                            System.out.println("Projeto atribuído a " + prog3.getNome());
-                        } else {
-                            System.out.println("Programador escolhido já está ocupado ou inválido.");
+                            System.out.print("2 - " + prog2.getNome() + " (" + prog2.getTipo() + ")");
+                            System.out.println(prog2.isOcupado() ? " [OCUPADO]" : "");
+
+                            System.out.print("3 - " + prog3.getNome() + " (" + prog3.getTipo() + ")");
+                            System.out.println(prog3.isOcupado() ? " [OCUPADO]" : "");
+
+                            System.out.print("Digite o número: ");
+                            int escolha = Integer.parseInt(reader.readLine());
+
+                            if (escolha == 1) {
+                                if (prog1.isOcupado())
+                                    throw new ProgramadorOcupadoException(prog1.getNome());
+                                prog1.setOcupado(true);
+                                cliente.setProgramador(prog1.getNome());
+                                listaClientes.add(cliente);
+                                System.out.println("Projeto atribuído a " + prog1.getNome());
+                            } else if (escolha == 2) {
+                                if (prog2.isOcupado())
+                                    throw new ProgramadorOcupadoException(prog2.getNome());
+                                prog2.setOcupado(true);
+                                cliente.setProgramador(prog2.getNome());
+                                listaClientes.add(cliente);
+                                System.out.println("Projeto atribuído a " + prog2.getNome());
+                            } else if (escolha == 3) {
+                                if (prog3.isOcupado())
+                                    throw new ProgramadorOcupadoException(prog3.getNome());
+                                prog3.setOcupado(true);
+                                cliente.setProgramador(prog3.getNome());
+                                listaClientes.add(cliente);
+                                System.out.println("Projeto atribuído a " + prog3.getNome());
+                            } else {
+                                System.out.println("Opção inválida.");
+                            }
+                        } catch (ProjetoVazioException e) {
+                            System.out.println(e.getMessage());
+                            System.out.println("Dica: " + e.getDica());
+                        } catch (ProgramadorOcupadoException e) {
+                            System.out.println(e.getMessage());
+                            System.out.println("Ajuda: " + e.getSugerencia());
                         }
                         break;
 
@@ -125,5 +149,10 @@ public class Principal {
             System.out.println("Erro: você deve digitar um número válido.");
         }
     }
-}
 
+    public static void validarProjeto(String nome) throws ProjetoVazioException {
+        if (nome.trim().isEmpty()) {
+            throw new ProjetoVazioException("Erro: nome não pode estar vazio.");
+        }
+    }
+}

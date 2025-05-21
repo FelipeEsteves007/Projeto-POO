@@ -2,7 +2,7 @@
 // RA: 2389576
 
 // Classe mãe
-public class Programador implements Exibivel {
+public abstract class Programador implements Exibivel {
     private String nome;
     private boolean ocupado = false;
 
@@ -21,10 +21,9 @@ public class Programador implements Exibivel {
     public void setOcupado(boolean ocupado) {
         this.ocupado = ocupado;
     }
-
-    public String getTipo() {
-        return "Programador genérico";
-    }
+    
+    // Método abstrato
+    public abstract String getTipo();
 
     //Sobrecarga
     public void mostrarDetalhes() {
