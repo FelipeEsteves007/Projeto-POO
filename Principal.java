@@ -13,27 +13,27 @@ public class Principal {
         int opcao = 0;
 
         Empresa empresa = new Empresa();
-        empresa.setLocalizacao("Avaré");
+        empresa.setLocalizacao("Avaré"); //Reflexividade
 
         List<Cliente> listaClientes = new ArrayList<>();
 
         // Programador Back-End
         ProgramadorBackEnd prog1 = new ProgramadorBackEnd();
-        prog1.setNome("Zé");
-        prog1.setLinguagemBackEnd("Java");
-        prog1.setBancoDeDados("MySQL");
+        prog1.setNome("Zé"); //Reflexividade
+        prog1.setLinguagemBackEnd("Java"); //Reflexividade
+        prog1.setBancoDeDados("MySQL"); //Reflexividade
 
         // Programador Front-End
         ProgramadorFrontEnd prog2 = new ProgramadorFrontEnd();
-        prog2.setNome("Larissa");
-        prog2.setLinguagemFrontEnd("JavaScript");
-        prog2.setFramework("React");
+        prog2.setNome("Larissa"); //Reflexividade
+        prog2.setLinguagemFrontEnd("JavaScript"); //Reflexividade
+        prog2.setFramework("React"); //Reflexividade
 
         // Programador Fullstack
-        ProgramadorFullstack prog3 = new ProgramadorFullstack();
-        prog3.setNome("Felipe");
-        prog3.setAnosExperiencia(4);
-        prog3.setProjetosConcluidos("App Mobile + API Web");
+        ProgramadorFullsstack prog3 = new ProgramadorFullsstack();
+        prog3.setNome("Felipe"); //Reflexividade
+        prog3.setAnosExperiencia(4); //Reflexividade
+        prog3.setProjetosConcluidos("App Mobile + API Web"); //Reflexividade
 
         try {
             do {
@@ -54,12 +54,12 @@ public class Principal {
                             System.out.print("Nome do Cliente: ");
                             String nomeCliente = reader.readLine();
                             validarProjeto(nomeCliente);
-                            cliente.setNome(nomeCliente);
+                            cliente.setNome(nomeCliente); //Reflexividade
 
                             System.out.print("Nome do Projeto: ");
                             String nomeProjeto = reader.readLine();
                             validarProjeto(nomeProjeto);
-                            cliente.setProjeto(nomeProjeto);
+                            cliente.setProjeto(nomeProjeto); //Reflexividade
 
                             System.out.println("\nEscolha um programador:");
                             System.out.print("1 - " + prog1.getNome() + " (" + prog1.getTipo() + ")");
@@ -77,22 +77,22 @@ public class Principal {
                             if (escolha == 1) {
                                 if (prog1.isOcupado())
                                     throw new ProgramadorOcupadoException(prog1.getNome());
-                                prog1.setOcupado(true);
-                                cliente.setProgramador(prog1.getNome());
+                                prog1.setOcupado(true); //Reflexividade
+                                cliente.setProgramador(prog1.getNome()); //Reflexividade
                                 listaClientes.add(cliente);
                                 System.out.println("Projeto atribuído a " + prog1.getNome());
                             } else if (escolha == 2) {
                                 if (prog2.isOcupado())
                                     throw new ProgramadorOcupadoException(prog2.getNome());
-                                prog2.setOcupado(true);
-                                cliente.setProgramador(prog2.getNome());
+                                prog2.setOcupado(true); //Reflexividade
+                                cliente.setProgramador(prog2.getNome()); //Reflexividade
                                 listaClientes.add(cliente);
                                 System.out.println("Projeto atribuído a " + prog2.getNome());
                             } else if (escolha == 3) {
                                 if (prog3.isOcupado())
                                     throw new ProgramadorOcupadoException(prog3.getNome());
-                                prog3.setOcupado(true);
-                                cliente.setProgramador(prog3.getNome());
+                                prog3.setOcupado(true); //Reflexividade
+                                cliente.setProgramador(prog3.getNome()); //Reflexividade
                                 listaClientes.add(cliente);
                                 System.out.println("Projeto atribuído a " + prog3.getNome());
                             } else {

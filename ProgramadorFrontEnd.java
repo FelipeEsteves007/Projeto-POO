@@ -7,11 +7,11 @@ public class ProgramadorFrontEnd extends Programador {
     private String framework;
 
     public void setLinguagemFrontEnd(String linguagemFrontEnd) {
-        this.linguagemFrontEnd = linguagemFrontEnd;
+        this.linguagemFrontEnd = linguagemFrontEnd; //Reflexividade
     }
 
     public void setFramework(String framework) {
-        this.framework = framework;
+        this.framework = framework; //Reflexividade
     }
 
     public String getLinguagemFrontEnd() {
@@ -28,6 +28,7 @@ public class ProgramadorFrontEnd extends Programador {
         return "Especialista em Front-End (" + linguagemFrontEnd + ", " + framework + ")";
     }
 
+    //Sobrescrita
     @Override
     public void exibirDados() {
         super.exibirDados();

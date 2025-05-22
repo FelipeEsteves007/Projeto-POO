@@ -7,11 +7,11 @@ public class ProgramadorBackEnd extends Programador {
     private String bancoDeDados;
 
     public void setLinguagemBackEnd(String linguagemBackEnd) {
-        this.linguagemBackEnd = linguagemBackEnd;
+        this.linguagemBackEnd = linguagemBackEnd; //Reflexividade
     }
 
     public void setBancoDeDados(String bancoDeDados) {
-        this.bancoDeDados = bancoDeDados;
+        this.bancoDeDados = bancoDeDados; //Reflexividade
     }
 
     public String getLinguagemBackEnd() {
@@ -28,6 +28,7 @@ public class ProgramadorBackEnd extends Programador {
         return "Especialista em Back-End (" + linguagemBackEnd + ", " + bancoDeDados + ")";
     }
 
+    //Sobrescrita
     @Override
     public void exibirDados() {
         super.exibirDados();
